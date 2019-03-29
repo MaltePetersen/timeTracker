@@ -1,0 +1,12 @@
+<div>
+<mat-form-field>
+  <input matInput type="text"  [(ngModel)]="user" placeholder="Username">
+</mat-form-field>
+</div>
+<div>
+<mat-form-field>
+  <input matInput type="text" [(ngModel)]="password" placeholder="Password">
+</mat-form-field>
+</div>
+<div>{{token}}</div>
+  <button mat-raised-button (click)="onSubmit()" >Login</button>

@@ -1,0 +1,40 @@
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+      <app-time-entry-change [timeEntryDTO]="selectedTimeEntry"></app-time-entry-change>
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+      <thead>
+      <tr>
+        <th>ChangeEntry</th>
+        <th>Delete</th>
+        <th class="mdl-data-table__cell--non-numeric">Id</th>
+        <th>WorkStart</th>
+        <th>WorkEnd</th>
+        <th>Company</th>
+        <th>Hours</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let timeEntry of timeEntryDTO">
+        <td>
+          <button mat-raised-button   (click)="drawer.toggle(); onChange(timeEntry)"  color="accent">Change Entry</button>
+        </td>
+        <td>
+          <app-time-list-child-delete [timeEntry]="timeEntry"></app-time-list-child-delete>
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">{{timeEntry.timeEntryId}}</td>
+        <td>{{momentMethod(timeEntry.workStart)}} </td>
+        <td>{{momentMethod(timeEntry.workEnd)}}</td>
+        <td>{{timeEntry.companyName}}</td>
+        <td>{{timeWorkedConverter(timeEntry.timeWorked)}}</td>
+
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+</mat-drawer-container>
+
+

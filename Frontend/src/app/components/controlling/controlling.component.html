@@ -1,0 +1,18 @@
+
+<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+  <thead>
+  <tr >
+    <th>Name</th>
+  <th *ngFor="let headers of companyView">{{headers.name}}</th>
+  </tr>
+  </thead >
+  <tbody>
+  <tr *ngFor="let user of controllingView" >
+    <td >{{user.username}}</td>
+    <ng-container *ngFor="let hours of user.hoursByCompanies">
+    <td>{{hours.hours}}</td>
+    </ng-container>
+</tr>
+  </tbody>
+</table>
+

@@ -1,0 +1,19 @@
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <span class="mdl-layout-title">Time Tracker</span>
+      <div  class="mdl-layout-spacer"></div>
+      <nav *ngIf="auth=='TRUE'" class="mdl-navigation mdl-layout--large-screen-only" >
+        <a class="mdl-navigation__link" [routerLink]="['']">Calendar</a>
+        <a class="mdl-navigation__link" [routerLink]="['/timeEntry']">Time-Entry</a>
+        <a class="mdl-navigation__link" [routerLink]="['/timeList']">Time-List</a>
+        <a class="mdl-navigation__link" [routerLink]="['/companiesList']">Companies-List</a>
+        <a class="mdl-navigation__link" [routerLink]="['/controlling']">Controlling</a>
+        <a class="mdl-navigation__link" [routerLink]="['/logout']">Logout</a>
+      </nav>
+    </div>
+  </header>
+  <main class="mdl-layout__content" style="padding: 20px;">
+    <router-outlet></router-outlet>
+  </main>
+</div>

@@ -1,0 +1,18 @@
+
+<div class="example-container">
+  <mat-form-field>
+    <input matInput type="time" placeholder="workStart" name="workStart" [(ngModel)]="workStart" id="workStart">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="time" placeholder="workEnd" name="workEnd" [(ngModel)]="workEnd" id="workEnd">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select placeholder="Select" >
+      <div *ngFor="let company of companies">
+        <mat-option value="{{company}}" (click)="onSelect(company)">{{company.name}}</mat-option>
+      </div>
+    </mat-select>
+  </mat-form-field>
+  <button mat-raised-button type="submit" value="Submit" (click)="onSubmit()">Submit</button>
+  <div *ngIf="!saveSucessfull">Fehlerhafte Eingabe</div>
+</div>
