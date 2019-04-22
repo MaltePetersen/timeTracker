@@ -29,7 +29,7 @@ public class DevelopmentConfig {
             @Override
             public void run(String... args) throws Exception {
                 if (!roleRepository.findByName(RoleName.ROLE_USER).isPresent())
-                roleRepository.save(new Role(RoleName.ROLE_USER));
+                    roleRepository.save(new Role(RoleName.ROLE_USER));
                 if (!roleRepository.findByName(RoleName.ROLE_ADMIN).isPresent())
                     roleRepository.save(new Role(RoleName.ROLE_ADMIN));
                 if (!roleRepository.findByName(RoleName.ROLE_PM).isPresent())
@@ -51,10 +51,12 @@ public class DevelopmentConfig {
                     userRepository.save(user);
 
                 }
-                companyRepository.deleteAll();
-                companyRepository.save(new Company("FRS"));
-                companyRepository.save(new Company("Helgoline"));
-                companyRepository.save(new Company("RSL"));
+                if (!companyRepository.findByName("FRS").isPresent())
+                    companyRepository.save(new Company("FRS"));
+                if (!companyRepository.findByName("Helgoline").isPresent())
+                    companyRepository.save(new Company("Helgoline"));
+                if (!companyRepository.findByName("RSL").isPresent())
+                    companyRepository.save(new Company("RSL"));
 
             }
         };
