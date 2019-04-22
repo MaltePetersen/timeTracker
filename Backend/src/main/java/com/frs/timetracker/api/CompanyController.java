@@ -40,7 +40,6 @@ public class CompanyController {
         System.out.println(company);
         return "test";
     }
-    //end::postTaco[]
 
 
     @GetMapping("/{id}")

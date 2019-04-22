@@ -9,10 +9,8 @@
         <module name="TimeTracker" />
       </profile>
     </annotationProcessing>
-  </component>
-  <component name="JavacSettings">
-    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="TimeTracker" options="-parameters" />
-    </option>
+    <bytecodeTargetLevel>
+      <module name="TimeTracker" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
