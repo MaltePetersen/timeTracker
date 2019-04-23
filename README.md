@@ -9,4 +9,4 @@ Mac Os or Linux might be a little different(maybe like this: `./mvnw spring-boot
 For the angular application you need to install npm first.  
 To start the Angular application just use `npm install` and after that `ng serve`.
 
-Beim erstmaligen Start wird automatisch ein Testuser erstellt (user: testUser; password:123456789)
+At the first start of the backend a test user is created (user: testUser; password:123456789).
